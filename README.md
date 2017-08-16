@@ -122,3 +122,47 @@
   ```
 + A remote is a copy of your local repository which is held somewhere else (on GitHub's servers, in this case). You can push changes to a remote or pull changes from a remote to make sure that your local and remote repositories stay in sync. You can have more than one remote for a single repository. For example, you may have a remote which belongs to a collaborator so you can pull changes they have made into your local repository. Or you may have a separate remote which you will push to in order to deploy the latest version of your code.
 + Here you are creating a remote called origin. This is the name that is conventionally given to your main remote. You should push changes up to your origin remote on a regular basis so you have an up-to-date backup of your code and its history.
+
+## Push your commits to the GitHub repository.
++ Now back on the command line, send your changes to the remote repository using the git push command. If it asks for your password, and you notice that it doesn't seem to respond as you type, know that the terminal is registering your keystrokes; as a security feature, it won't provide visual feedback that reveals the length of your password.
+  ```sh
+    $ git push origin master
+    Username for 'https://github.com': ckshitij
+    Password for 'https://ckshitij@github.com':
+    Counting objects: 3, done.
+    Writing objects: 100% (3/4), 235 bytes | 0 bytes/s, done.
+    Total 3 (delta 0), reused 0 (delta 0)
+    To https://github.com/ckshitij/first_push.git
+    * [new branch]      master -> master
+    Branch master set up to track remote branch master from origin.
+  ```
++ This command is doing a couple of things. First, it will create the master branch in the remote repository because it does not currently exist. Then it sends the most recent snapshot of the newly created master branch so the copy on GitHub matches our local copy.
+
++ Try visiting your repository on the GitHub website. You should see that your local files and change history are now available to view online.
+
+## Pulling from GitHub
++ There's one more basic function of Git you need to know: how to pull from a remote repository so that your version matches the version on a remote server. To do so, you'll use the `git pull` command, pulling from the master branch. Type the following command:
+  ```sh
+    $ git pull origin master
+    Already up-to-date.
+  ```
+ + Since the repo you're pulling from is already the same as your local repo, git compares the two and notifies you that your local version is up-to-date. If the remote version were different than your local version, it would overwrite your local version with any updated changes, such as a new feature or bug fix that a co-worker had developed.
+ 
+## Git Cheatsheet
++ _Use this cheatsheet as a reference for each of the steps in the basic git workflow_.
+
++ _How to commit your work for the first time in a new project_:
+
+  + __Initialize a repository__: type `git init`. Command line should say "Initialized empty Git repository"
+  + __Check the repository__: type `git status`. It should show you the untracked files.
+  + __Save your progress__: track the file by adding it using git add followed by each of the filenames, one at a time.
+  + __Check what has changed__: type `git status`.
+  + __Commit the changes__: type `git commit -m "commit message"`.
+  + Success! If you type git status You should see __"nothing to commit, working directory clean".__
+
++ _Pushing your snapshot to GitHub_:
+
+  + Go to github.com and _create a new repository_
+  + Add GitHub repository as a __remote branch__: Use `git remote add origin git@github.com...`(follow GitHub's instructions for this line)
+  + __Send changes to repository__: type `git push origin master` to send your committed changes.
+  + __To pull from GitHub__: Use the command `git pull` to keep your version up-to-date with the remote version
