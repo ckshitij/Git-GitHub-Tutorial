@@ -1,5 +1,11 @@
 # Version control with Git and GitHub
 
+## Reference
++ [__Video Link__](https://www.youtube.com/watch?v=DqtZUvmPmo4&list=PLhW3qG5bs-L8OlICbNX9u4MZ3rAt5c5GG)
++ [__Free Udacity Course__](http://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html)
++ [__About Command Line__](https://www.codecademy.com/articles/command-line-commands)
++ [__About Git__]
+
 ## Git and GitHub: The Mile High view
 
 - Git is the most popular program used for __"version control."__ Git lets you _save snapshots of your project_ as you build it. Each time you save a snapshot, it shows you how the version you just saved differs from the previous version. You can (and will) use Git on any kind of project, whether it's a simple website or complex iOS app.
